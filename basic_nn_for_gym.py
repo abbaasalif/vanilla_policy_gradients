@@ -11,7 +11,7 @@ initializer = tf.contrib.layers.variance_scaling_initializer()
 # network layers
 
 x = tf.placeholder(tf.float32, shape=[None, num_inputs])
-hidden_layer_one = tf.layers.dense(X,num_hidden, activation = tf.nn.relu, kernel_initializer= initializer)
+hidden_layer_one = tf.layers.dense(x,num_hidden, activation = tf.nn.relu, kernel_initializer= initializer)
 hidden_layer_two = tf.layers.dense(hidden_layer_one, num_hidden, activation = tf.nn.relu, kernel_initializer=intializer)
 
 #Probability to go left
