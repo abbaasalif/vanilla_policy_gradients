@@ -37,7 +37,7 @@ with tf.Session() as sess:
         obs = env.reset()
 
         for step in range(step_limit):
-            action_val = action.eval(feed_dict={X:obs.reshape(1,num_inputs)})
+            action_val = action.eval(feed_dict={x:obs.reshape(1,num_inputs)})
             obs, rewared, done, info = env.step(action_val[0][0])# 0 or 1
 
             if done:
