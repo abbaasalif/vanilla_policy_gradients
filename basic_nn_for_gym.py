@@ -28,7 +28,7 @@ init = tf.global_variables_initializer()
 
 step_limit = 500
 epi=50
-env = gym.make("CartPole-v0")
+env = gym.make("CartPole-v1")
 avg_steps = []
 with tf.Session() as sess:
     init.run()
@@ -38,7 +38,7 @@ with tf.Session() as sess:
 
         for step in range(step_limit):
             action_val = action.eval(feed_dict={x:obs.reshape(1,num_inputs)})
-            obs, rewared, done, info = env.step(action_val[0][0])# 0 or 1
+            obs, reward, done, info = env.step(action_val[0][0])# 0 or 1
 
             if done:
                 avg_steps.append(step)
