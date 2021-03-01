@@ -12,7 +12,7 @@ initializer = tf.contrib.layers.variance_scaling_initializer()
 
 x = tf.placeholder(tf.float32, shape=[None, num_inputs])
 hidden_layer_one = tf.layers.dense(x,num_hidden, activation = tf.nn.relu, kernel_initializer= initializer)
-hidden_layer_two = tf.layers.dense(hidden_layer_one, num_hidden, activation = tf.nn.relu, kernel_initializer=intializer)
+hidden_layer_two = tf.layers.dense(hidden_layer_one, num_hidden, activation = tf.nn.relu, kernel_initializer=initializer)
 
 #Probability to go left
 
@@ -30,7 +30,7 @@ step_limit = 500
 epi=50
 env = gym.make("CartPole-v0")
 avg_steps = []
-with tf.session() as sess:
+with tf.Session() as sess:
     init.run()
 
     for ep in range(epi):
